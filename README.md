@@ -71,6 +71,8 @@ CLIENT_URL=https://your-app-name.onrender.com
 
 Для production клиент по умолчанию использует относительный путь `/api/chat`, поэтому frontend и backend работают под одним доменом без дополнительной настройки `VITE_API_URL`.
 
+Если Render показывает ошибку `TS2688: Cannot find type definition file for 'node'`, это означает, что build-time TypeScript зависимости для вложенного `server`-пакета не были установлены. В текущем `render.yaml` это уже исправлено: build-команда явно устанавливает зависимости для `server` и `client` с `--include=dev` перед общей сборкой.
+
 ## Переменные окружения
 
 ```env
