@@ -10,7 +10,7 @@ import type {
   SpeechRecognitionLike
 } from "./types/speech";
 
-const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:4000";
+const apiUrl = import.meta.env.VITE_API_URL || "";
 const initialMessages: ChatMessage[] = [];
 
 export default function App() {

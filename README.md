@@ -53,6 +53,24 @@ npm start
 
 После сборки backend автоматически раздаёт `client/dist`, поэтому приложение будет доступно по `http://localhost:4000`.
 
+## Деплой на Render
+
+Проект готов к деплою одним сервисом через [render.yaml](/C:/Users/Star/Documents/nest/job-project/render.yaml:1).
+
+1. Запушьте репозиторий в GitHub.
+2. В Render выберите `New +` -> `Blueprint`.
+3. Подключите репозиторий и подтвердите создание сервиса из `render.yaml`.
+4. В Render задайте секреты:
+
+```env
+OPENAI_API_KEY=your_openai_api_key
+CLIENT_URL=https://your-app-name.onrender.com
+```
+
+5. После деплоя откройте URL сервиса и проверьте `GET /api/health`.
+
+Для production клиент по умолчанию использует относительный путь `/api/chat`, поэтому frontend и backend работают под одним доменом без дополнительной настройки `VITE_API_URL`.
+
 ## Переменные окружения
 
 ```env

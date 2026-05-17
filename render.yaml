@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: own-chat
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4.1-mini
+      - key: CLIENT_URL
+        sync: false
